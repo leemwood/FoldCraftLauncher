@@ -143,7 +143,7 @@
     <string name="control_import_failed">导入布局失败！</string>
     <string name="control_upgrade">布局方案：%s 是一个过时的布局方案，它可能导致一些未知的错误，但我们仍然支持加载它，是否将其迁移至新版？</string>
     <string name="control_incompatible">布局方案：%s 是一个不兼容的布局方案，这可能是由于启动器版本过低或控件版本过低导致的，请检查。</string>
-    <string name="control_upload_requirement">请先加入 QQ 群，然后点击“分享”按键，分享你的控件和基本信息，等待管理员审核。请联系管理员告知你的控件类型。</string>
+    <string name="control_upload_requirement">请先阅读文档及注意事项，群聊不允许闲聊，也不会解决你的难题。然后加入 QQ 群，验证消息填写你的控件名称或ID，否则管理员会拒绝/移出群聊，然后点击“分享”按键，分享你的控件和基本信息，等待管理员审核。请联系管理员告知你的控件类型。</string>
     <string name="control_info_author">作者：</string>
     <string name="control_info_icon">图标：</string>
     <string name="control_info_lang">语言：</string>

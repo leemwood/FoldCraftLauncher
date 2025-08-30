@@ -1,20 +1,20 @@
 [
   {
     "type": "release",
-    "versionCode": 1200,
-    "versionName": "1.2.0",
-    "date": "2025.01.16",
+    "versionCode": 1249,
+    "versionName": "1.2.4.9",
+    "date": "2025.08.28",
     "description": [
       {
         "lang": "en",
-        "text": "See Github for details."
+        "text": "(Translated from Chinese by AI)\n1. Update the Krypton Wrapper renderer  \n2. Fix a crash that may occur due to uninitialized renderer  \n3. Resolve the issue of being unable to download all required files for NeoForge from BMCLAPI  \n4. Fix the launcher crash when importing data packs with abnormal formats  \n5. Add an April Fools' Day version download category"
       },
       {
         "lang": "zh_CN",
-        "text": "（若启动器内下载缓慢请使用网盘下载,64位的请下载arm64，不知道该下哪个的请下载all）\n1.修复客户端(比如FPSBoost)菜单页面内鼠标滚轮无效的Bug\n2.修复模组文件过大导致启动器读取时内存不足崩溃的Bug\n3.修改公告链接\n4.修复Java执行命令相关Bug\n5.修复CPU信息获取为空的Bug\n6.在日志内输出DLOPEN信息\n7.增加插件下载链接快捷跳转\n8.修复插件读取Bug"
+        "text": "（若启动器内下载缓慢请使用网盘下载,64位的请下载arm64，不知道该下哪个的请下载all）\n1.更新 Krypton Wrapper 渲染器\n2.修复渲染器未初始化可能造成的闪退\n3.修复无法从 BMCLAPI 下载 NeoForge 所有所需文件的问题\n4.修复导入异常格式的数据包时启动器崩溃的问题\n5.添加愚人节版本下载分类"
       }
     ],
-    "netdiskUrl": "https://pan.quark.cn/s/226e654f8382",
-    "url": "https://github.com/FCL-Team/FoldCraftLauncher/releases/download/1.2.0/FCL-release-1.2.0-all.apk"
+    "netdiskUrl": "https://pan.quark.cn/s/fe67f0173fe5",
+    "url": "https://github.com/FCL-Team/FoldCraftLauncher/releases/download/1.2.4.9/FCL-release-1.2.4.9-all.apk"
   }
 ]

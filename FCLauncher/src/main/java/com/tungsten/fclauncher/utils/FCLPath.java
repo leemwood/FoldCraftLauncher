@@ -19,6 +19,7 @@ public class FCLPath {
     public static String JAVA_11_PATH;
     public static String JAVA_17_PATH;
     public static String JAVA_21_PATH;
+    public static String JAVA_PATH;
     public static String JNA_PATH;
     public static String LWJGL_DIR;
     public static String CACIOCAVALLO_8_DIR;
@@ -34,7 +35,7 @@ public class FCLPath {
     public static String SHARED_COMMON_DIR = Environment.getExternalStorageDirectory().getAbsolutePath() + "/FCL/.minecraft";
 
     public static String AUTHLIB_INJECTOR_PATH;
-    public static String LIB_FIXER_PATH;
+    public static String LIB_PATCHER_PATH;
     public static String MIO_LAUNCH_WRAPPER;
     public static String LT_BACKGROUND_PATH;
     public static String DK_BACKGROUND_PATH;
@@ -48,6 +49,7 @@ public class FCLPath {
         CACHE_DIR = context.getCacheDir() + "/fclauncher";
 
         RUNTIME_DIR = context.getDir("runtime", 0).getAbsolutePath();
+        JAVA_PATH = RUNTIME_DIR + "/java";
         JAVA_8_PATH = RUNTIME_DIR + "/java/jre8";
         JAVA_11_PATH = RUNTIME_DIR + "/java/jre11";
         JAVA_17_PATH = RUNTIME_DIR + "/java/jre17";
@@ -66,7 +68,7 @@ public class FCLPath {
         PRIVATE_COMMON_DIR = context.getExternalFilesDir(".minecraft").getAbsolutePath();
 
         AUTHLIB_INJECTOR_PATH = PLUGIN_DIR + "/authlib-injector.jar";
-        LIB_FIXER_PATH = PLUGIN_DIR + "/MioLibFixer.jar";
+        LIB_PATCHER_PATH = PLUGIN_DIR + "/MioLibPatcher.jar";
         MIO_LAUNCH_WRAPPER = PLUGIN_DIR + "/MioLaunchWrapper.jar";
         LT_BACKGROUND_PATH = BACKGROUND_DIR + "/lt.png";
         DK_BACKGROUND_PATH = BACKGROUND_DIR + "/dk.png";

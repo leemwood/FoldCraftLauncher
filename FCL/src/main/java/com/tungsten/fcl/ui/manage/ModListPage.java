@@ -17,6 +17,7 @@ import androidx.appcompat.widget.LinearLayoutCompat;
 
 import com.tungsten.fcl.R;
 import com.tungsten.fcl.activity.MainActivity;
+import com.tungsten.fcl.game.FCLGameRepository;
 import com.tungsten.fcl.setting.Profile;
 import com.tungsten.fcl.ui.PageManager;
 import com.tungsten.fcl.ui.TaskDialog;
@@ -34,6 +35,7 @@ import com.tungsten.fclcore.fakefx.beans.property.SimpleBooleanProperty;
 import com.tungsten.fclcore.fakefx.beans.property.SimpleListProperty;
 import com.tungsten.fclcore.fakefx.collections.FXCollections;
 import com.tungsten.fclcore.fakefx.collections.ObservableList;
+import com.tungsten.fclcore.game.Version;
 import com.tungsten.fclcore.mod.LocalModFile;
 import com.tungsten.fclcore.mod.ModManager;
 import com.tungsten.fclcore.mod.RemoteMod;
@@ -59,7 +61,6 @@ import java.io.File;
 import java.io.IOException;
 import java.io.UncheckedIOException;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 import java.util.Locale;
@@ -193,7 +194,9 @@ public class ModListPage extends FCLCommonPage implements ManageUI.VersionLoadab
         adapter.selectedItemsProperty().clear();
         cancelSearch();
 
-        libraryAnalyzer = LibraryAnalyzer.analyze(profile.getRepository().getResolvedPreservingPatchesVersion(version));
+        FCLGameRepository repository = profile.getRepository();
+        Version resolved = repository.getResolvedPreservingPatchesVersion(versionId);
+        libraryAnalyzer = LibraryAnalyzer.analyze(resolved, repository.getGameVersion(resolved).orElse(null));
         setModded(libraryAnalyzer.hasModLoader());
         loadMods(profile.getRepository().getModManager(version));
     }
@@ -425,7 +428,7 @@ public class ModListPage extends FCLCommonPage implements ManageUI.VersionLoadab
 
     public void download() {
         MainActivity.getInstance().refreshMenuView(null);
-        MainActivity.getInstance().bind.download.setSelected(true);
+        MainActivity.getInstance().binding.download.setSelected(true);
         DownloadPageManager.getInstance().switchPage(DownloadPageManager.PAGE_ID_DOWNLOAD_MOD);
     }
 
@@ -481,7 +484,7 @@ public class ModListPage extends FCLCommonPage implements ManageUI.VersionLoadab
         }
     }
 
-    static class ModInfoObject implements Comparable<ModInfoObject> {
+    public static class ModInfoObject implements Comparable<ModInfoObject> {
         private final BooleanProperty active;
         private final LocalModFile localModFile;
         private final String title;

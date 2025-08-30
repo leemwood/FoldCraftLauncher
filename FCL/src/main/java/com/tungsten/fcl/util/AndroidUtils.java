@@ -8,12 +8,14 @@ import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.ClipData;
 import android.content.ClipboardManager;
+import android.content.ComponentName;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
+import android.database.Cursor;
 import android.graphics.Point;
-import android.graphics.Rect;
 import android.media.MediaMetadataRetriever;
 import android.net.Uri;
 import android.opengl.EGL14;
@@ -23,12 +25,15 @@ import android.opengl.EGLDisplay;
 import android.opengl.GLES20;
 import android.os.Build;
 import android.os.Bundle;
+import android.provider.OpenableColumns;
+import android.view.DisplayCutout;
 import android.view.WindowManager;
 import android.webkit.CookieManager;
 import android.widget.Toast;
 
 import com.tungsten.fcl.R;
 import com.tungsten.fcl.activity.WebActivity;
+import com.tungsten.fclauncher.utils.FCLPath;
 import com.tungsten.fclcore.util.Logging;
 import com.tungsten.fclcore.util.io.FileUtils;
 import com.tungsten.fclcore.util.io.IOUtils;
@@ -46,7 +51,15 @@ public class AndroidUtils {
     public static void openLink(Context context, String link) {
         Uri uri = Uri.parse(link);
         Intent intent = new Intent(Intent.ACTION_VIEW, uri);
-        context.startActivity(intent);
+        ComponentName componentName = intent.resolveActivity(context.getPackageManager());
+        if (componentName != null) {
+            context.startActivity(Intent.createChooser(intent, ""));
+        } else {
+            ClipboardManager clipboard = (ClipboardManager) context.getSystemService(Context.CLIPBOARD_SERVICE);
+            ClipData clip = ClipData.newPlainText("FCL Clipboard", link);
+            clipboard.setPrimaryClip(clip);
+            Toast.makeText(context, context.getString(R.string.open_link_failed), Toast.LENGTH_LONG).show();
+        }
     }
 
     public static void openLinkWithBuiltinWebView(Context context, String link) {
@@ -106,18 +119,27 @@ public class AndroidUtils {
         if (fullscreen || SDK_INT < Build.VERSION_CODES.P) {
             return point.x;
         } else {
-            try {
-                Rect notchRect;
-                if (SDK_INT >= Build.VERSION_CODES.S) {
-                    notchRect = Objects.requireNonNull(wm.getCurrentWindowMetrics().getWindowInsets().getDisplayCutout()).getBoundingRects().get(0);
-                } else {
-                    notchRect = Objects.requireNonNull(context.getWindow().getDecorView().getRootWindowInsets().getDisplayCutout()).getBoundingRects().get(0);
-                }
-                return point.x - Math.min(notchRect.width(), notchRect.height());
-            } catch (Exception e) {
-                return point.x;
-            }
+            return point.x - getSafeInset(context);
         }
+    }
+
+    public static int getSafeInset(Activity context) {
+        try {
+            if (SDK_INT >= Build.VERSION_CODES.P) {
+                WindowManager wm = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
+                DisplayCutout cutout;
+                if (SDK_INT >= Build.VERSION_CODES.R) {
+                    cutout = wm.getCurrentWindowMetrics().getWindowInsets().getDisplayCutout();
+                } else {
+                    cutout = context.getWindow().getDecorView().getRootWindowInsets().getDisplayCutout();
+                }
+                int safeInsetLeft = cutout != null ? cutout.getSafeInsetLeft() : 0;
+                int safeInsetRight = cutout != null ? cutout.getSafeInsetRight() : 0;
+                return Math.max(safeInsetLeft, safeInsetRight);
+            }
+        } catch (Throwable ignored) {
+        }
+        return 0;
     }
 
     @SuppressWarnings("resource")
@@ -171,6 +193,17 @@ public class AndroidUtils {
 
     public static boolean isDocUri(Uri uri) {
         return Objects.equals(uri.getScheme(), ContentResolver.SCHEME_FILE) || Objects.equals(uri.getScheme(), ContentResolver.SCHEME_CONTENT);
+    }
+
+    public static String getFileName(Context context, Uri uri) {
+        Cursor cursor = context.getContentResolver().query(uri, null, null, null, null);
+        if (cursor == null) return uri.getLastPathSegment();
+        cursor.moveToFirst();
+        int columnIndex = cursor.getColumnIndex(OpenableColumns.DISPLAY_NAME);
+        if (columnIndex == -1) return uri.getLastPathSegment();
+        String fileName = cursor.getString(columnIndex);
+        cursor.close();
+        return fileName;
     }
 
     public static boolean isAdrenoGPU() {

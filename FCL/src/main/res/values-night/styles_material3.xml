@@ -15,7 +15,7 @@
     </style>
 
     <!-- Material 3 Tab Layout Styles - Dark Theme -->
-    <style name="Widget.Material3.TabLayout" parent="Widget.Material3.TabLayout.Colored">
+    <style name="Widget.Material3.TabLayout" parent="Widget.Material3.TabLayout">
         <item name="tabTextAppearance">@style/TextAppearance.Material3.TabLayout</item>
         <item name="tabIndicatorColor">@color/md_theme_dark_primary</item>
         <item name="tabSelectedTextColor">@color/md_theme_dark_primary</item>

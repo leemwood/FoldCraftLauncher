@@ -88,7 +88,7 @@
                         android:layout_width="30dp"
                         android:layout_height="30dp"
                         android:layout_gravity="center"
-                        app:cardBackgroundColor="@color/md_theme_light_primaryContainer"
+                        app:cardBackgroundColor="@color/md_theme_light_primary_container"
                         app:cardCornerRadius="8dp"
                         app:cardElevation="@dimen/md3_elevation_level1">
                         
@@ -97,7 +97,7 @@
                             android:layout_height="20dp"
                             android:layout_gravity="center"
                             android:src="@drawable/ic_baseline_games_24"
-                            app:tint="@color/md_theme_light_onPrimaryContainer" />
+                            app:tint="@color/md_theme_light_on_primary_container" />
                             
                     </com.google.android.material.card.MaterialCardView>
 

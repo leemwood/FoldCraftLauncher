@@ -46,12 +46,13 @@
             android:layout_height="0dp"
             android:layout_weight="1"/>
 
-        <androidx.appcompat.widget.AppCompatButton
+        <com.google.android.material.button.MaterialButton
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:text="@string/style_name"
             android:layout_marginStart="10dp"
             android:id="@+id/button"
+            style="@style/Widget.Material3.Button"
             android:layout_gravity="center"/>
 
     </com.tungsten.fcllibrary.component.view.FCLLinearLayout>

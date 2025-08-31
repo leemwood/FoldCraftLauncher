@@ -33,6 +33,9 @@ public class FCLCheckBox extends AppCompatCheckBox {
         @Override
         protected void invalidated() {
             get();
+            int primaryColor = ThemeEngine.getInstance().getTheme().getPrimaryColor();
+            int onSurfaceColor = ThemeEngine.getInstance().getTheme().getOnSurfaceColor();
+            
             int[][] state = {
                     {
                             android.R.attr.state_checked
@@ -42,12 +45,12 @@ public class FCLCheckBox extends AppCompatCheckBox {
                     }
             };
             int[] color = {
-                    ThemeEngine.getInstance().getTheme().getDkColor(),
-                    ThemeEngine.getInstance().getTheme().getColor()
+                    primaryColor,
+                    onSurfaceColor
             };
             setButtonTintList(new ColorStateList(state, color));
             if (autoTint) {
-                setTextColor(ThemeEngine.getInstance().getTheme().getAutoTint());
+                setTextColor(onSurfaceColor);
             }
         }
 

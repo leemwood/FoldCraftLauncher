@@ -12,10 +12,11 @@
         android:layout_marginStart="5dp"
         android:layout_marginEnd="5dp">
 
-        <androidx.appcompat.widget.AppCompatButton
+        <com.google.android.material.button.MaterialButton
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:id="@+id/button"
+            style="@style/Widget.Material3.Button"
             android:layout_gravity="center"/>
 
         <View

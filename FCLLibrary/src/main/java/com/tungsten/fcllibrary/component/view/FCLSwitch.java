@@ -36,17 +36,21 @@ public class FCLSwitch extends SwitchCompat {
 
                     }
             };
+            int primaryColor = ThemeEngine.getInstance().getTheme().getPrimaryColor();
+            int onSurfaceColor = ThemeEngine.getInstance().getTheme().getOnSurfaceColor();
+            int surfaceColor = ThemeEngine.getInstance().getTheme().getSurfaceColor();
+            
             int[] color = {
-                    ThemeEngine.getInstance().getTheme().getDkColor(),
-                    ThemeEngine.getInstance().getTheme().getColor() | 0xFF000000
+                    primaryColor,
+                    onSurfaceColor
             };
             int[] subColor = {
-                    ThemeEngine.getInstance().getTheme().getColor() | 0xFF000000,
-                    Color.GRAY
+                    primaryColor,
+                    surfaceColor
             };
             setThumbTintList(new ColorStateList(state, color));
             setTrackTintList(new ColorStateList(state, subColor));
-            setTextColor(ThemeEngine.getInstance().getTheme().getAutoTint());
+            setTextColor(onSurfaceColor);
         }
 
         @Override

@@ -69,11 +69,19 @@
                     android:text="@string/settings_launcher_download_source"
                     app:auto_text_tint="true" />
 
-                <androidx.appcompat.widget.AppCompatSpinner
-                    android:id="@+id/download_source"
+                <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp" />
+                    android:layout_marginTop="10dp"
+                    style="@style/Widget.Material3.TextInputLayout.FilledBox.ExposedDropdownMenu">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/download_source"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="none" />
+
+                </com.google.android.material.textfield.TextInputLayout>
 
                 <com.tungsten.fcllibrary.component.view.FCLTextView
                     android:layout_width="wrap_content"
@@ -83,11 +91,19 @@
                     android:text="@string/settings_launcher_language"
                     app:auto_text_tint="true" />
 
-                <androidx.appcompat.widget.AppCompatSpinner
-                    android:id="@+id/lang"
+                <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp" />
+                    android:layout_marginTop="10dp"
+                    style="@style/Widget.Material3.TextInputLayout.FilledBox.ExposedDropdownMenu">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/lang"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="none" />
+
+                </com.google.android.material.textfield.TextInputLayout>
 
                 <com.tungsten.fcllibrary.component.view.FCLTextView
                     android:layout_width="wrap_content"
@@ -111,11 +127,19 @@
                     android:text="@string/search_device"
                     app:auto_text_tint="true" />
 
-                <androidx.appcompat.widget.AppCompatSpinner
-                    android:id="@+id/device"
+                <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp" />
+                    android:layout_marginTop="10dp"
+                    style="@style/Widget.Material3.TextInputLayout.FilledBox.ExposedDropdownMenu">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/device"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="none" />
+
+                </com.google.android.material.textfield.TextInputLayout>
 
             </androidx.appcompat.widget.LinearLayoutCompat>
 

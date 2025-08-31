@@ -13,6 +13,8 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 
+import com.google.android.material.color.DynamicColors;
+import com.google.android.material.color.MaterialColors;
 import com.mio.util.ImageUtil;
 import com.tungsten.fclauncher.utils.FCLPath;
 import com.tungsten.fclcore.util.io.FileUtils;
@@ -89,6 +91,67 @@ public class ThemeEngine {
             }
         }
     }
+    
+    // Material 3 color application methods
+    public void applyMaterial3Colors(Context context) {
+        if (DynamicColors.isDynamicColorAvailable()) {
+            // Use dynamic colors if available (Android 12+)
+            try {
+                int primary = MaterialColors.getColor(context, com.google.android.material.R.attr.colorPrimary, Color.parseColor("#6750A4"));
+                int secondary = MaterialColors.getColor(context, com.google.android.material.R.attr.colorSecondary, Color.parseColor("#625B71"));
+                int surface = MaterialColors.getColor(context, com.google.android.material.R.attr.colorSurface, Color.parseColor("#FFFBFE"));
+                int background = MaterialColors.getColor(context, com.google.android.material.R.attr.colorBackground, Color.parseColor("#FFFBFE"));
+                int onPrimary = MaterialColors.getColor(context, com.google.android.material.R.attr.colorOnPrimary, Color.parseColor("#FFFFFF"));
+                int onSecondary = MaterialColors.getColor(context, com.google.android.material.R.attr.colorOnSecondary, Color.parseColor("#FFFFFF"));
+                int onSurface = MaterialColors.getColor(context, com.google.android.material.R.attr.colorOnSurface, Color.parseColor("#1C1B1F"));
+                int onBackground = MaterialColors.getColor(context, com.google.android.material.R.attr.colorOnBackground, Color.parseColor("#1C1B1F"));
+                
+                theme.setPrimaryColor(primary);
+                theme.setSecondaryColor(secondary);
+                theme.setSurfaceColor(surface);
+                theme.setBackgroundColor(background);
+                theme.setOnPrimaryColor(onPrimary);
+                theme.setOnSecondaryColor(onSecondary);
+                theme.setOnSurfaceColor(onSurface);
+                theme.setOnBackgroundColor(onBackground);
+            } catch (Exception e) {
+                // Fallback to default Material 3 colors
+                applyDefaultMaterial3Colors(context);
+            }
+        } else {
+            applyDefaultMaterial3Colors(context);
+        }
+        
+        // Notify all registered views
+        for (View view : runnables.keySet()) {
+            if (view != null && runnables.get(view) != null) {
+                handler.post(runnables.get(view));
+            }
+        }
+    }
+    
+    private void applyDefaultMaterial3Colors(Context context) {
+        boolean isNightMode = isNightMode(context);
+        if (isNightMode) {
+            theme.setPrimaryColor(Color.parseColor("#D0BCFF"));
+            theme.setSecondaryColor(Color.parseColor("#CCC2DC"));
+            theme.setSurfaceColor(Color.parseColor("#1C1B1F"));
+            theme.setBackgroundColor(Color.parseColor("#1C1B1F"));
+            theme.setOnPrimaryColor(Color.parseColor("#371E73"));
+            theme.setOnSecondaryColor(Color.parseColor("#332D41"));
+            theme.setOnSurfaceColor(Color.parseColor("#E6E0E9"));
+            theme.setOnBackgroundColor(Color.parseColor("#E6E0E9"));
+        } else {
+            theme.setPrimaryColor(Color.parseColor("#6750A4"));
+            theme.setSecondaryColor(Color.parseColor("#625B71"));
+            theme.setSurfaceColor(Color.parseColor("#FFFBFE"));
+            theme.setBackgroundColor(Color.parseColor("#FFFBFE"));
+            theme.setOnPrimaryColor(Color.parseColor("#FFFFFF"));
+            theme.setOnSecondaryColor(Color.parseColor("#FFFFFF"));
+            theme.setOnSurfaceColor(Color.parseColor("#1C1B1F"));
+            theme.setOnBackgroundColor(Color.parseColor("#1C1B1F"));
+        }
+    }
 
     public void applyFullscreen(Window window, boolean fullscreen) {
         theme.setFullscreen(fullscreen);
@@ -156,6 +219,7 @@ public class ThemeEngine {
 
     public void applyAndSave(Context context, Window window, Theme theme) {
         applyColor(theme.getColor());
+        applyMaterial3Colors(context);
         applyFullscreen(window, theme.isFullscreen());
         Theme.saveTheme(context, theme);
     }

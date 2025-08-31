@@ -27,8 +27,13 @@ public class FCLLinearLayout extends LinearLayoutCompat {
         @Override
         protected void invalidated() {
             get();
+            int surfaceColor = ThemeEngine.getInstance().getTheme().getSurfaceColor();
+            int primaryColor = ThemeEngine.getInstance().getTheme().getPrimaryColor();
+            
             if (autoTint) {
-                setBackgroundTintList(new ColorStateList(new int[][] { { } }, new int[] { ThemeEngine.getInstance().getTheme().getLtColor() }));
+                setBackgroundTintList(ColorStateList.valueOf(surfaceColor));
+            } else {
+                setBackgroundTintList(ColorStateList.valueOf(primaryColor));
             }
         }
 

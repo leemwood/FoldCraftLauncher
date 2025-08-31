@@ -40,16 +40,19 @@ public class FCLButton extends AppCompatButton {
         @Override
         protected void invalidated() {
             get();
+            int primaryColor = ThemeEngine.getInstance().getTheme().getPrimaryColor();
+            int onPrimaryColor = ThemeEngine.getInstance().getTheme().getOnPrimaryColor();
+            
             drawableNormal.setColor(Color.TRANSPARENT);
-            drawablePress.setColor(ThemeEngine.getInstance().getTheme().getLtColor());
+            drawablePress.setColor(primaryColor);
             if (!ripple) {
                 if (isDown) {
                     setBackgroundDrawable(drawablePress);
-                    setTextColor(ThemeEngine.getInstance().getTheme().getAutoTint());
+                    setTextColor(onPrimaryColor);
                 }
                 else {
                     setBackgroundDrawable(drawableNormal);
-                    setTextColor(ThemeEngine.getInstance().getTheme().getLtColor());
+                    setTextColor(primaryColor);
                 }
             } else {
                 setRipple();
@@ -91,7 +94,7 @@ public class FCLButton extends AppCompatButton {
         drawableNormal.setColor(Color.TRANSPARENT);
         drawablePress.setShape(shape);
         drawablePress.setCornerRadius(ConvertUtils.dip2px(getContext(), 8));
-        drawablePress.setColor(ThemeEngine.getInstance().getTheme().getLtColor());
+        drawablePress.setColor(ThemeEngine.getInstance().getTheme().getPrimaryColor());
         setStateListAnimator(AnimatorInflater.loadStateListAnimator(getContext(), R.xml.anim_scale));
     }
 
@@ -132,12 +135,12 @@ public class FCLButton extends AppCompatButton {
             if (event.getActionMasked() == MotionEvent.ACTION_DOWN) {
                 isDown = true;
                 setBackgroundDrawable(drawablePress);
-                setTextColor(ThemeEngine.getInstance().getTheme().getAutoTint());
+                setTextColor(ThemeEngine.getInstance().getTheme().getOnPrimaryColor());
             }
             if (event.getActionMasked() == MotionEvent.ACTION_UP || event.getActionMasked() == MotionEvent.ACTION_CANCEL) {
                 isDown = false;
                 setBackgroundDrawable(drawableNormal);
-                setTextColor(ThemeEngine.getInstance().getTheme().getLtColor());
+                setTextColor(ThemeEngine.getInstance().getTheme().getPrimaryColor());
             }
         }
         return super.onTouchEvent(event);
@@ -152,10 +155,10 @@ public class FCLButton extends AppCompatButton {
                 }
         };
         int[] color = {
-                ThemeEngine.getInstance().getTheme().getColor()
+                ThemeEngine.getInstance().getTheme().getPrimaryColor()
         };
         setBackgroundTintList(new ColorStateList(state, color));
-        setTextColor(ThemeEngine.getInstance().getTheme().getAutoTint());
+        setTextColor(ThemeEngine.getInstance().getTheme().getOnPrimaryColor());
     }
 
     public boolean isRipple() {

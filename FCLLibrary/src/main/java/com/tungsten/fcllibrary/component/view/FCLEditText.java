@@ -71,6 +71,10 @@ public class FCLEditText extends AppCompatEditText {
         @Override
         protected void invalidated() {
             get();
+            int primaryColor = ThemeEngine.getInstance().getTheme().getPrimaryColor();
+            int onSurfaceColor = ThemeEngine.getInstance().getTheme().getOnSurfaceColor();
+            int surfaceColor = ThemeEngine.getInstance().getTheme().getSurfaceColor();
+            
             int[][] state = {
                     {
                             android.R.attr.state_focused
@@ -80,16 +84,19 @@ public class FCLEditText extends AppCompatEditText {
                     }
             };
             int[] color = {
-                    ThemeEngine.getInstance().getTheme().getColor(),
-                    ThemeEngine.getInstance().getTheme().getDkColor()
+                    primaryColor,
+                    onSurfaceColor
             };
             setBackgroundTintList(new ColorStateList(state, color));
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
-                getTextCursorDrawable().setTint(ThemeEngine.getInstance().getTheme().getColor());
+                getTextCursorDrawable().setTint(primaryColor);
             }
             if (autoTint) {
-                setTextColor(ThemeEngine.getInstance().getTheme().getAutoTint());
-                setHintTextColor(ThemeEngine.getInstance().getTheme().getAutoHintTint());
+                setTextColor(onSurfaceColor);
+                setHintTextColor(onSurfaceColor);
+            } else {
+                setTextColor(primaryColor);
+                setHintTextColor(primaryColor);
             }
         }
 

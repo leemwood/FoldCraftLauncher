@@ -144,11 +144,19 @@
                     android:text="@string/control_info_lang"
                     android:layout_gravity="center"/>
 
-                <androidx.appcompat.widget.AppCompatSpinner
+                <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="250dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:id="@+id/lang"/>
+                    style="@style/Widget.Material3.TextInputLayout.FilledBox.ExposedDropdownMenu">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/lang"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="none" />
+
+                </com.google.android.material.textfield.TextInputLayout>
 
             </androidx.appcompat.widget.LinearLayoutCompat>
 

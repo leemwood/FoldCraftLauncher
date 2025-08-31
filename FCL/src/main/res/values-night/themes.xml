@@ -1,16 +1,30 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.FoldCraftLauncher" parent="Theme.MaterialComponents.DayNight.NoActionBar">
-        <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/default_theme_color</item>
-        <item name="colorPrimaryVariant">@color/default_theme_color</item>
-        <item name="colorOnPrimary">@color/default_theme_color</item>
-        <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/default_theme_color</item>
-        <item name="colorSecondaryVariant">@color/default_theme_color</item>
-        <item name="colorOnSecondary">@color/default_theme_color</item>
-        <!-- Status bar color. -->
-        <item name="android:statusBarColor">@color/default_theme_color</item>
+    <style name="Theme.FoldCraftLauncher" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Material 3 Dark Primary Colors -->
+        <item name="colorPrimary">@color/md_theme_dark_primary</item>
+        <item name="colorOnPrimary">@color/md_theme_dark_on_primary</item>
+        <item name="colorPrimaryContainer">@color/md_theme_dark_primary_container</item>
+        <item name="colorOnPrimaryContainer">@color/md_theme_dark_on_primary_container</item>
+        
+        <!-- Material 3 Dark Secondary Colors -->
+        <item name="colorSecondary">@color/md_theme_dark_secondary</item>
+        <item name="colorOnSecondary">@color/md_theme_dark_on_secondary</item>
+        <item name="colorSecondaryContainer">@color/md_theme_dark_secondary_container</item>
+        <item name="colorOnSecondaryContainer">@color/md_theme_dark_on_secondary_container</item>
+        
+        <!-- Material 3 Dark Surface Colors -->
+        <item name="colorSurface">@color/md_theme_dark_surface</item>
+        <item name="colorOnSurface">@color/md_theme_dark_on_surface</item>
+        <item name="colorSurfaceVariant">@color/md_theme_dark_surface_variant</item>
+        <item name="colorOnSurfaceVariant">@color/md_theme_dark_on_surface_variant</item>
+        
+        <!-- Material 3 Dark Background Colors -->
+        <item name="android:colorBackground">@color/md_theme_dark_background</item>
+        <item name="colorOnBackground">@color/md_theme_dark_on_background</item>
+        
+        <!-- Status bar color -->
+        <item name="android:statusBarColor" tools:targetApi="l">@color/md_theme_dark_surface</item>
         <!-- Customize your theme here. -->
         <item name="android:windowNoTitle">true</item>
         <item name="android:windowContentOverlay">@null</item>

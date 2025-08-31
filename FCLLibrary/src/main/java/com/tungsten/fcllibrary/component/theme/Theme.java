@@ -11,6 +11,8 @@ import android.graphics.drawable.BitmapDrawable;
 
 import androidx.core.graphics.ColorUtils;
 
+import com.google.android.material.color.DynamicColors;
+import com.google.android.material.color.MaterialColors;
 import com.mio.util.ImageUtil;
 import com.tungsten.fclcore.fakefx.beans.property.BooleanProperty;
 import com.tungsten.fclcore.fakefx.beans.property.IntegerProperty;
@@ -28,6 +30,16 @@ public class Theme {
     private final IntegerProperty ltColor = new SimpleIntegerProperty();
     private final IntegerProperty dkColor = new SimpleIntegerProperty();
     private final IntegerProperty autoTint = new SimpleIntegerProperty();
+    
+    // Material 3 color properties
+    private final IntegerProperty primaryColor = new SimpleIntegerProperty();
+    private final IntegerProperty secondaryColor = new SimpleIntegerProperty();
+    private final IntegerProperty surfaceColor = new SimpleIntegerProperty();
+    private final IntegerProperty backgroundColor = new SimpleIntegerProperty();
+    private final IntegerProperty onPrimaryColor = new SimpleIntegerProperty();
+    private final IntegerProperty onSecondaryColor = new SimpleIntegerProperty();
+    private final IntegerProperty onSurfaceColor = new SimpleIntegerProperty();
+    private final IntegerProperty onBackgroundColor = new SimpleIntegerProperty();
     private final BooleanProperty fullscreen = new SimpleBooleanProperty();
     private final BooleanProperty closeSkinModel = new SimpleBooleanProperty();
     private final IntegerProperty animationSpeed = new SimpleIntegerProperty();
@@ -53,6 +65,16 @@ public class Theme {
         this.autoTint.set(ColorUtils.calculateLuminance(color) >= 0.5 ? Color.parseColor("#FF000000") : Color.parseColor("#FFFFFFFF"));
         this.backgroundLt.set(backgroundLt);
         this.backgroundDk.set(backgroundDk);
+        
+        // Initialize Material 3 colors with fallback values
+        this.primaryColor.set(color);
+        this.secondaryColor.set(color2);
+        this.surfaceColor.set(Color.parseColor("#FFFBFE"));
+        this.backgroundColor.set(Color.parseColor("#FFFBFE"));
+        this.onPrimaryColor.set(Color.parseColor("#FFFFFF"));
+        this.onSecondaryColor.set(Color.parseColor("#FFFFFF"));
+        this.onSurfaceColor.set(Color.parseColor("#1C1B1F"));
+        this.onBackgroundColor.set(Color.parseColor("#1C1B1F"));
     }
 
     public int getColor() {
@@ -73,6 +95,39 @@ public class Theme {
 
     public int getAutoTint() {
         return autoTint.get();
+    }
+    
+    // Material 3 color getters
+    public int getPrimaryColor() {
+        return primaryColor.get();
+    }
+    
+    public int getSecondaryColor() {
+        return secondaryColor.get();
+    }
+    
+    public int getSurfaceColor() {
+        return surfaceColor.get();
+    }
+    
+    public int getBackgroundColor() {
+        return backgroundColor.get();
+    }
+    
+    public int getOnPrimaryColor() {
+        return onPrimaryColor.get();
+    }
+    
+    public int getOnSecondaryColor() {
+        return onSecondaryColor.get();
+    }
+    
+    public int getOnSurfaceColor() {
+        return onSurfaceColor.get();
+    }
+    
+    public int getOnBackgroundColor() {
+        return onBackgroundColor.get();
     }
 
     public int getAutoHintTint() {
@@ -117,6 +172,39 @@ public class Theme {
 
     public IntegerProperty autoTintProperty() {
         return autoTint;
+    }
+    
+    // Material 3 color properties
+    public IntegerProperty primaryColorProperty() {
+        return primaryColor;
+    }
+    
+    public IntegerProperty secondaryColorProperty() {
+        return secondaryColor;
+    }
+    
+    public IntegerProperty surfaceColorProperty() {
+        return surfaceColor;
+    }
+    
+    public IntegerProperty backgroundColorProperty() {
+        return backgroundColor;
+    }
+    
+    public IntegerProperty onPrimaryColorProperty() {
+        return onPrimaryColor;
+    }
+    
+    public IntegerProperty onSecondaryColorProperty() {
+        return onSecondaryColor;
+    }
+    
+    public IntegerProperty onSurfaceColorProperty() {
+        return onSurfaceColor;
+    }
+    
+    public IntegerProperty onBackgroundColorProperty() {
+        return onBackgroundColor;
     }
 
     public BooleanProperty fullscreenProperty() {
@@ -181,6 +269,39 @@ public class Theme {
 
     public void setBackgroundDk(BitmapDrawable backgroundDk) {
         this.backgroundDk.set(backgroundDk);
+    }
+    
+    // Material 3 color setters
+    public void setPrimaryColor(int color) {
+        this.primaryColor.set(color);
+    }
+    
+    public void setSecondaryColor(int color) {
+        this.secondaryColor.set(color);
+    }
+    
+    public void setSurfaceColor(int color) {
+        this.surfaceColor.set(color);
+    }
+    
+    public void setBackgroundColor(int color) {
+        this.backgroundColor.set(color);
+    }
+    
+    public void setOnPrimaryColor(int color) {
+        this.onPrimaryColor.set(color);
+    }
+    
+    public void setOnSecondaryColor(int color) {
+        this.onSecondaryColor.set(color);
+    }
+    
+    public void setOnSurfaceColor(int color) {
+        this.onSurfaceColor.set(color);
+    }
+    
+    public void setOnBackgroundColor(int color) {
+        this.onBackgroundColor.set(color);
     }
 
     public static Theme getTheme(Context context) {

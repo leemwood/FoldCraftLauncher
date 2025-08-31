@@ -34,17 +34,22 @@ public class FCLTextView extends AppCompatTextView {
         @Override
         protected void invalidated() {
             get();
+            int primaryColor = ThemeEngine.getInstance().getTheme().getPrimaryColor();
+            int onSurfaceColor = ThemeEngine.getInstance().getTheme().getOnSurfaceColor();
+            
             if (autoTint) {
-                setTextColor(ThemeEngine.getInstance().getTheme().getAutoTint());
+                setTextColor(onSurfaceColor);
                 Drawable[] drawables = getCompoundDrawablesRelative();
                 for (Drawable drawable : drawables) {
                     if (drawable != null) {
-                        drawable.setTint(ThemeEngine.getInstance().getTheme().getAutoTint());
+                        drawable.setTint(onSurfaceColor);
                     }
                 }
+            } else {
+                setTextColor(primaryColor);
             }
             if (autoBackgroundTint) {
-                setBackgroundTintList(new ColorStateList(new int[][]{{}}, new int[]{ThemeEngine.getInstance().getTheme().getColor()}));
+                setBackgroundTintList(new ColorStateList(new int[][]{{}}, new int[]{primaryColor}));
             }
         }
 
@@ -64,8 +69,15 @@ public class FCLTextView extends AppCompatTextView {
         @Override
         protected void invalidated() {
             get();
+            int secondaryColor = ThemeEngine.getInstance().getTheme().getSecondaryColor();
+            int onSurfaceColor = ThemeEngine.getInstance().getTheme().getOnSurfaceColor();
+            
             if (useThemeColor) {
-                setTextColor(ThemeEngine.getInstance().getTheme().getColor2());
+                if (autoTint) {
+                    setTextColor(onSurfaceColor);
+                } else {
+                    setTextColor(secondaryColor);
+                }
             }
         }
 
@@ -132,7 +144,8 @@ public class FCLTextView extends AppCompatTextView {
 
     public void setUseThemeColor(boolean useThemeColor) {
         this.useThemeColor = useThemeColor;
-        setTextColor(ThemeEngine.getInstance().getTheme().getColor2());
+        int secondaryColor = ThemeEngine.getInstance().getTheme().getSecondaryColor();
+        setTextColor(secondaryColor);
     }
 
     public boolean isUseThemeColor() {

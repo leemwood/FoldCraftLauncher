@@ -245,6 +245,7 @@
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/version"
+            style="@style/Widget.Material3.Button"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginStart="8dp"
@@ -263,6 +264,7 @@
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/jar"
+            style="@style/Widget.Material3.Button"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginStart="4dp"

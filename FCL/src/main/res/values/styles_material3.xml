@@ -51,4 +51,10 @@
     <style name="Widget.Material3.CompoundButton.RadioButton" parent="Widget.Material3.CompoundButton.RadioButton">
         <item name="buttonTint">@color/md_theme_light_primary</item>
     </style>
+
+    <!-- Material 3 Shape Appearance Overlays -->
+    <style name="ShapeAppearanceOverlay.Material3.Corner.Small" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">4dp</item>
+    </style>
 </resources>

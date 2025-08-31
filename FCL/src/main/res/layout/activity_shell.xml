@@ -29,6 +29,7 @@
         app:layout_constraintEnd_toEndOf="parent">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/shell_log_window"
             android:gravity="start|top"
             android:cursorVisible="false"
             android:textIsSelectable="true"
@@ -38,8 +39,5 @@
             android:layout_height="match_parent" />
 
     </com.google.android.material.textfield.TextInputLayout>
-        android:id="@+id/shell_log_window"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

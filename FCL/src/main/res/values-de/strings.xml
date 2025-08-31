@@ -540,7 +540,7 @@
     <string name="modpack_installing">Modpack wird installiert</string>
     <string name="modpack_introduction">Derzeit werden Modpacks von CurseForge, Modrinth, MultiMC und MCBBS unterstützt.</string>
     <string name="modpack_invalid">Ungültiges Modpack, versuchen Sie es erneut herunterzuladen.</string>
-    <string name="modpack_mismatched_type">Modpack-Typ stimmt nicht überein. Das aktuelle Profil hat den Typ %s, während das bereitgestellte Modpack den Typ %s hat.</string>
+    <string name="modpack_mismatched_type" formatted="false">Modpack-Typ stimmt nicht überein. Das aktuelle Profil hat den Typ %s, während das bereitgestellte Modpack den Typ %s hat.</string>
     <string name="modpack_not_a_valid_name">Ungültiger Modpackname</string>
     <string name="modpack_origin">Quelle</string>
     <string name="modpack_origin_url">Offizielle Website</string>
@@ -826,7 +826,7 @@
     <string name="world_add">Welt hinzufügen (.zip)</string>
     <string name="world_datapack">Datenpakete verwalten</string>
     <string name="world_datapack_1_13">Nur Minecraft 1.13 oder neuer unterstützt Datenpakete.</string>
-    <string name="world_description">%s. Zuletzt gespielt: %s. Spielversion: %s.</string>
+    <string name="world_description" formatted="false">%s. Zuletzt gespielt: %s. Spielversion: %s.</string>
     <string name="world_download">Welt herunterladen</string>
     <string name="world_export">Welt exportieren</string>
     <string name="world_export_title">Verzeichnis für diese exportierte Welt wählen</string>
@@ -897,7 +897,7 @@
     <string name="mod_check_valkyrienskies">Die Valkyrien Skies/Valkyrien Warfare-Mod (%s) funktioniert nicht direkt im Einzelspieler. Ein Server ist erforderlich, andernfalls führt dies zu einem Spielabsturz.</string>
     <string name="mod_check_yes_steve_model">Die Yes Steve Model-Mod (%s) Version 2.2.2 und höher funktioniert nicht auf Android.</string>
     <string name="mod_check_imblocker">IMBlocker/In-GameIME (%s) ist nicht für Android vorgesehen. Dies führt zu einem Spielabsturz.</string>
-    <string name="mod_check_replay">Replay (%s) benötigt das FFmpeg-Plugin. Es ist nicht installiert. Installieren Sie es aus dem Google Play Store oder hier (%s oder %s) (lange drücken zum Kopieren).</string>
+    <string name="mod_check_replay" formatted="false">Replay (%s) benötigt das FFmpeg-Plugin. Es ist nicht installiert. Installieren Sie es aus dem Google Play Store oder hier (%s oder %s) (lange drücken zum Kopieren).</string>
     <string name="mod_check_borderlesswindow">BorderlessWindow (%s) ist nicht für Android vorgesehen. Dies führt zu einem Spielabsturz.</string>
     <string name="mod_check_axiom">Die aktuelle Axiom-Mod (%s) ist nicht gepatcht, dies führt zu einem Spielabsturz.</string>
 

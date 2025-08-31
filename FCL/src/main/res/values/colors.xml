@@ -1,27 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Material 3 Primary Colors -->
+    <!-- Default theme color -->
     <color name="default_theme_color">#7797CF</color>
-    <color name="md_theme_light_primary">#7797CF</color>
-    <color name="md_theme_light_onPrimary">#FFFFFF</color>
-    <color name="md_theme_light_primaryContainer">#D6E3FF</color>
-    <color name="md_theme_light_onPrimaryContainer">#001C3B</color>
-    
-    <!-- Material 3 Secondary Colors -->
-    <color name="md_theme_light_secondary">#565F71</color>
-    <color name="md_theme_light_onSecondary">#FFFFFF</color>
-    <color name="md_theme_light_secondaryContainer">#DAE2F9</color>
-    <color name="md_theme_light_onSecondaryContainer">#131C2B</color>
-    
-    <!-- Material 3 Surface Colors -->
-    <color name="md_theme_light_surface">#FEFBFF</color>
-    <color name="md_theme_light_onSurface">#1B1B1F</color>
-    <color name="md_theme_light_surfaceVariant">#E1E2EC</color>
-    <color name="md_theme_light_onSurfaceVariant">#44474F</color>
-    
-    <!-- Material 3 Background Colors -->
-    <color name="md_theme_light_background">#FEFBFF</color>
-    <color name="md_theme_light_onBackground">#1B1B1F</color>
     
     <!-- Legacy Colors -->
     <color name="black">#FF000000</color>

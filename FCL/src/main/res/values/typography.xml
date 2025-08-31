@@ -5,110 +5,95 @@
     <!-- Display Styles -->
     <style name="TextAppearance.MD3.DisplayLarge" parent="TextAppearance.Material3.DisplayLarge">
         <item name="android:textSize">57sp</item>
-        <item name="android:fontFamily">@font/roboto_regular</item>
-        <item name="android:letterSpacing">-0.25sp</item>
+        <item name="android:letterSpacing">-0.25</item>
         <item name="android:lineSpacingExtra">8sp</item>
     </style>
     
     <style name="TextAppearance.MD3.DisplayMedium" parent="TextAppearance.Material3.DisplayMedium">
         <item name="android:textSize">45sp</item>
-        <item name="android:fontFamily">@font/roboto_regular</item>
-        <item name="android:letterSpacing">0sp</item>
+        <item name="android:letterSpacing">0</item>
         <item name="android:lineSpacingExtra">8sp</item>
     </style>
     
     <style name="TextAppearance.MD3.DisplaySmall" parent="TextAppearance.Material3.DisplaySmall">
         <item name="android:textSize">36sp</item>
-        <item name="android:fontFamily">@font/roboto_regular</item>
-        <item name="android:letterSpacing">0sp</item>
+        <item name="android:letterSpacing">0</item>
         <item name="android:lineSpacingExtra">8sp</item>
     </style>
     
     <!-- Headline Styles -->
     <style name="TextAppearance.MD3.HeadlineLarge" parent="TextAppearance.Material3.HeadlineLarge">
         <item name="android:textSize">32sp</item>
-        <item name="android:fontFamily">@font/roboto_regular</item>
-        <item name="android:letterSpacing">0sp</item>
+        <item name="android:letterSpacing">0</item>
         <item name="android:lineSpacingExtra">8sp</item>
     </style>
     
     <style name="TextAppearance.MD3.HeadlineMedium" parent="TextAppearance.Material3.HeadlineMedium">
         <item name="android:textSize">28sp</item>
-        <item name="android:fontFamily">@font/roboto_regular</item>
-        <item name="android:letterSpacing">0sp</item>
+        <item name="android:letterSpacing">0</item>
         <item name="android:lineSpacingExtra">8sp</item>
     </style>
     
     <style name="TextAppearance.MD3.HeadlineSmall" parent="TextAppearance.Material3.HeadlineSmall">
         <item name="android:textSize">24sp</item>
-        <item name="android:fontFamily">@font/roboto_regular</item>
-        <item name="android:letterSpacing">0sp</item>
+        <item name="android:letterSpacing">0</item>
         <item name="android:lineSpacingExtra">8sp</item>
     </style>
     
     <!-- Title Styles -->
     <style name="TextAppearance.MD3.TitleLarge" parent="TextAppearance.Material3.TitleLarge">
         <item name="android:textSize">22sp</item>
-        <item name="android:fontFamily">@font/roboto_medium</item>
-        <item name="android:letterSpacing">0sp</item>
+        <item name="android:letterSpacing">0</item>
         <item name="android:lineSpacingExtra">6sp</item>
     </style>
     
     <style name="TextAppearance.MD3.TitleMedium" parent="TextAppearance.Material3.TitleMedium">
         <item name="android:textSize">16sp</item>
-        <item name="android:fontFamily">@font/roboto_medium</item>
-        <item name="android:letterSpacing">0.15sp</item>
+        <item name="android:letterSpacing">0.15</item>
         <item name="android:lineSpacingExtra">6sp</item>
     </style>
     
     <style name="TextAppearance.MD3.TitleSmall" parent="TextAppearance.Material3.TitleSmall">
         <item name="android:textSize">14sp</item>
-        <item name="android:fontFamily">@font/roboto_medium</item>
-        <item name="android:letterSpacing">0.1sp</item>
+        <item name="android:letterSpacing">0.1</item>
         <item name="android:lineSpacingExtra">4sp</item>
     </style>
     
     <!-- Body Styles -->
     <style name="TextAppearance.MD3.BodyLarge" parent="TextAppearance.Material3.BodyLarge">
         <item name="android:textSize">16sp</item>
-        <item name="android:fontFamily">@font/roboto_regular</item>
-        <item name="android:letterSpacing">0.5sp</item>
+        <item name="android:letterSpacing">0.5</item>
         <item name="android:lineSpacingExtra">6sp</item>
     </style>
     
     <style name="TextAppearance.MD3.BodyMedium" parent="TextAppearance.Material3.BodyMedium">
         <item name="android:textSize">14sp</item>
-        <item name="android:fontFamily">@font/roboto_regular</item>
-        <item name="android:letterSpacing">0.25sp</item>
+        <item name="android:letterSpacing">0.25</item>
         <item name="android:lineSpacingExtra">4sp</item>
     </style>
     
     <style name="TextAppearance.MD3.BodySmall" parent="TextAppearance.Material3.BodySmall">
         <item name="android:textSize">12sp</item>
-        <item name="android:fontFamily">@font/roboto_regular</item>
-        <item name="android:letterSpacing">0.4sp</item>
+        <item name="android:letterSpacing">0.4</item>
         <item name="android:lineSpacingExtra">4sp</item>
     </style>
     
     <!-- Label Styles -->
     <style name="TextAppearance.MD3.LabelLarge" parent="TextAppearance.Material3.LabelLarge">
         <item name="android:textSize">14sp</item>
-        <item name="android:fontFamily">@font/roboto_medium</item>
-        <item name="android:letterSpacing">0.1sp</item>
+        <item name="android:letterSpacing">0.1</item>
         <item name="android:lineSpacingExtra">4sp</item>
     </style>
     
     <style name="TextAppearance.MD3.LabelMedium" parent="TextAppearance.Material3.LabelMedium">
         <item name="android:textSize">12sp</item>
-        <item name="android:fontFamily">@font/roboto_medium</item>
-        <item name="android:letterSpacing">0.5sp</item>
+        <item name="android:letterSpacing">0.5</item>
         <item name="android:lineSpacingExtra">4sp</item>
     </style>
     
     <style name="TextAppearance.MD3.LabelSmall" parent="TextAppearance.Material3.LabelSmall">
         <item name="android:textSize">11sp</item>
-        <item name="android:fontFamily">@font/roboto_medium</item>
-        <item name="android:letterSpacing">0.5sp</item>
+        <item name="android:letterSpacing">0.5</item>
         <item name="android:lineSpacingExtra">4sp</item>
     </style>
 </resources>

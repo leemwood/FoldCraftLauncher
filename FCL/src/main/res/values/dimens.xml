@@ -2,6 +2,19 @@
 <resources>
     <!-- Material Design 3 Spacing System -->
     
+    <!-- MD3 Standard Spacing -->
+    <dimen name="md3_spacing_small">8dp</dimen>
+    <dimen name="md3_spacing_medium">16dp</dimen>
+    <dimen name="md3_spacing_large">24dp</dimen>
+    
+    <!-- MD3 Elevation Levels -->
+    <dimen name="md3_elevation_level0">0dp</dimen>
+    <dimen name="md3_elevation_level1">1dp</dimen>
+    <dimen name="md3_elevation_level2">3dp</dimen>
+    <dimen name="md3_elevation_level3">6dp</dimen>
+    <dimen name="md3_elevation_level4">8dp</dimen>
+    <dimen name="md3_elevation_level5">12dp</dimen>
+    
     <!-- Base Spacing Unit: 4dp -->
     <dimen name="spacing_xs">4dp</dimen>
     <dimen name="spacing_sm">8dp</dimen>

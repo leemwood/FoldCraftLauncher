@@ -100,11 +100,11 @@ public class ThemeEngine {
                 int primary = MaterialColors.getColor(context, com.google.android.material.R.attr.colorPrimary, Color.parseColor("#6750A4"));
                 int secondary = MaterialColors.getColor(context, com.google.android.material.R.attr.colorSecondary, Color.parseColor("#625B71"));
                 int surface = MaterialColors.getColor(context, com.google.android.material.R.attr.colorSurface, Color.parseColor("#FFFBFE"));
-                int background = MaterialColors.getColor(context, com.google.android.material.R.attr.colorBackground, Color.parseColor("#FFFBFE"));
+                int background = MaterialColors.getColor(context, com.google.android.material.R.attr.colorSurface, Color.parseColor("#FFFBFE"));
                 int onPrimary = MaterialColors.getColor(context, com.google.android.material.R.attr.colorOnPrimary, Color.parseColor("#FFFFFF"));
                 int onSecondary = MaterialColors.getColor(context, com.google.android.material.R.attr.colorOnSecondary, Color.parseColor("#FFFFFF"));
                 int onSurface = MaterialColors.getColor(context, com.google.android.material.R.attr.colorOnSurface, Color.parseColor("#1C1B1F"));
-                int onBackground = MaterialColors.getColor(context, com.google.android.material.R.attr.colorOnBackground, Color.parseColor("#1C1B1F"));
+                int onBackground = MaterialColors.getColor(context, com.google.android.material.R.attr.colorOnSurface, Color.parseColor("#1C1B1F"));
                 
                 theme.setPrimaryColor(primary);
                 theme.setSecondaryColor(secondary);

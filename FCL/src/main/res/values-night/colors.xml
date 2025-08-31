@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Material 3 colors are now defined in colors_material3.xml -->
+    <!-- Material Design 3 Dark Theme Color Overrides -->
     
-    <!-- Legacy Colors -->
-    <color name="primary_text">#FFFFFF</color>
+    <!-- Legacy Colors for Dark Theme -->
+    <color name="default_theme_color">@color/md_theme_dark_primary</color>
+    <color name="ui_bg_color">@color/md_theme_dark_surfaceVariant</color>
+    <color name="right_menu_color">@color/md_theme_dark_surface</color>
+    <color name="icon_background_color">@color/md_theme_dark_surface</color>
+    <color name="primary_text">@color/md_theme_dark_onSurface</color>
 </resources>

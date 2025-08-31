@@ -16,9 +16,10 @@
         app:layout_constraintHorizontal_bias="0.5"/>
 
     <com.tungsten.fcllibrary.component.view.FCLTabLayout
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="@dimen/md3_spacing_medium"
         android:id="@+id/tab_layout"
-        app:tabTextAppearance="@style/TabTextAppearance"
+        style="@style/Widget.Material3.TabLayout"
+        app:tabTextAppearance="@style/TextAppearance.Material3.TabLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:tabUnboundedRipple="false"

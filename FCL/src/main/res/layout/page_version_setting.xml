@@ -83,12 +83,23 @@
                         android:layout_height="0dp"
                         android:layout_weight="1" />
 
-                    <com.tungsten.fcllibrary.component.view.FCLImageView
+                    <com.google.android.material.card.MaterialCardView
                         android:id="@+id/icon"
                         android:layout_width="30dp"
                         android:layout_height="30dp"
                         android:layout_gravity="center"
-                        android:src="@drawable/img_grass" />
+                        app:cardBackgroundColor="@color/md_theme_light_primaryContainer"
+                        app:cardCornerRadius="8dp"
+                        app:cardElevation="@dimen/md3_elevation_level1">
+                        
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_baseline_games_24"
+                            app:tint="@color/md_theme_light_onPrimaryContainer" />
+                            
+                    </com.google.android.material.card.MaterialCardView>
 
                     <com.tungsten.fcllibrary.component.view.FCLImageButton
                         android:id="@+id/edit_icon"

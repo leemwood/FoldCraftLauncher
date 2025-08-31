@@ -22,7 +22,8 @@
         android:layout_width="15dp"
         android:layout_height="15dp"
         android:id="@+id/cursor"
-        android:src="@drawable/img_cursor"
+        android:background="@color/md_theme_light_primary"
+        android:elevation="@dimen/md3_elevation_level1"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"/>
 

@@ -8,21 +8,23 @@
     android:transitionName="background"
     tools:context=".activity.MainActivity">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/left_menu"
-        android:layout_width="wrap_content"
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/left_menu_card"
+        android:layout_width="@dimen/navigation_rail_width"
         android:layout_height="0dp"
-        android:background="@drawable/bg_game_menu"
-        android:clipChildren="false"
-        android:clipToPadding="false"
-        android:elevation="100dp"
-        android:paddingStart="5dp"
-        android:paddingTop="10dp"
-        android:paddingEnd="5dp"
-        android:paddingBottom="10dp"
+        android:layout_margin="@dimen/spacing_sm"
+        app:cardBackgroundColor="@color/md_theme_light_surface"
+        app:cardCornerRadius="@dimen/card_corner_radius"
+        app:cardElevation="@dimen/elevation_level2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
+        
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/left_menu"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="@dimen/spacing_lg">
 
         <com.tungsten.fcllibrary.component.view.FCLMenuView
             android:id="@+id/home"
@@ -83,18 +85,28 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/setting" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        
+    </com.google.android.material.card.MaterialCardView>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/right_menu"
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/right_menu_card"
         android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:background="@drawable/bg_right_menu"
-        android:clipChildren="false"
-        android:clipToPadding="false"
-        android:elevation="100dp"
+        android:layout_height="0dp"
+        android:layout_margin="@dimen/spacing_sm"
+        app:cardBackgroundColor="@color/md_theme_light_surface"
+        app:cardCornerRadius="@dimen/card_corner_radius"
+        app:cardElevation="@dimen/elevation_level2"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintWidth_percent="0.25">
+        
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/right_menu"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="@dimen/spacing_lg">
 
         <com.addisonelliott.segmentedbutton.SegmentedButtonGroup
             android:id="@+id/backend"
@@ -143,7 +155,7 @@
                 android:id="@+id/avatar"
                 android:layout_width="52dp"
                 android:layout_height="52dp"
-                android:elevation="50dp"
+                android:elevation="@dimen/md3_elevation_level5"
                 android:focusable="true"
                 android:stateListAnimator="@xml/anim_scale_large"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -301,4 +313,6 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

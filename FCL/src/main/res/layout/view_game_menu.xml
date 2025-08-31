@@ -33,11 +33,12 @@
             android:textStyle="bold"
             app:use_theme_color="true" />
 
-        <com.tungsten.fcllibrary.component.view.FCLImageView
+        <View
             android:layout_width="15dp"
             android:layout_height="15dp"
             android:id="@+id/cursor"
-            android:src="@drawable/img_cursor"/>
+            android:background="@color/md_theme_light_primary"
+            android:elevation="@dimen/md3_elevation_level1"/>
 
         <com.tungsten.fcllibrary.component.view.FCLProgressBar
             android:layout_width="wrap_content"

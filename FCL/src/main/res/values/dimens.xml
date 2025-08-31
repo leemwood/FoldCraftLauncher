@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Material Design 3 Spacing System -->
+    
+    <!-- Base Spacing Unit: 4dp -->
+    <dimen name="spacing_xs">4dp</dimen>
+    <dimen name="spacing_sm">8dp</dimen>
+    <dimen name="spacing_md">12dp</dimen>
+    <dimen name="spacing_lg">16dp</dimen>
+    <dimen name="spacing_xl">20dp</dimen>
+    <dimen name="spacing_xxl">24dp</dimen>
+    <dimen name="spacing_xxxl">32dp</dimen>
+    
+    <!-- Component Spacing -->
+    <dimen name="component_padding_horizontal">16dp</dimen>
+    <dimen name="component_padding_vertical">12dp</dimen>
+    <dimen name="component_margin">8dp</dimen>
+    
+    <!-- Button Dimensions -->
+    <dimen name="button_height">40dp</dimen>
+    <dimen name="button_height_large">48dp</dimen>
+    <dimen name="button_padding_horizontal">24dp</dimen>
+    <dimen name="button_padding_vertical">10dp</dimen>
+    <dimen name="button_corner_radius">20dp</dimen>
+    
+    <!-- Card Dimensions -->
+    <dimen name="card_corner_radius">12dp</dimen>
+    <dimen name="card_elevation">1dp</dimen>
+    <dimen name="card_padding">16dp</dimen>
+    <dimen name="card_margin">8dp</dimen>
+    
+    <!-- Input Field Dimensions -->
+    <dimen name="input_field_height">56dp</dimen>
+    <dimen name="input_field_corner_radius">4dp</dimen>
+    <dimen name="input_field_padding_horizontal">16dp</dimen>
+    
+    <!-- Icon Sizes -->
+    <dimen name="icon_size_small">16dp</dimen>
+    <dimen name="icon_size_medium">24dp</dimen>
+    <dimen name="icon_size_large">32dp</dimen>
+    <dimen name="icon_size_xlarge">48dp</dimen>
+    
+    <!-- Navigation -->
+    <dimen name="navigation_rail_width">80dp</dimen>
+    <dimen name="navigation_drawer_width">280dp</dimen>
+    <dimen name="bottom_navigation_height">80dp</dimen>
+    
+    <!-- Elevation Values -->
+    <dimen name="elevation_level0">0dp</dimen>
+    <dimen name="elevation_level1">1dp</dimen>
+    <dimen name="elevation_level2">3dp</dimen>
+    <dimen name="elevation_level3">6dp</dimen>
+    <dimen name="elevation_level4">8dp</dimen>
+    <dimen name="elevation_level5">12dp</dimen>
+    
+    <!-- Container Dimensions -->
+    <dimen name="container_max_width">840dp</dimen>
+    <dimen name="container_padding">16dp</dimen>
+    
+    <!-- Touch Target -->
+    <dimen name="touch_target_min_size">48dp</dimen>
+</resources>

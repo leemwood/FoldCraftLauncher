@@ -54,7 +54,7 @@
     <dimen name="icon_size_xlarge">48dp</dimen>
     
     <!-- Navigation -->
-    <dimen name="navigation_rail_width">80dp</dimen>
+    <dimen name="navigation_rail_width">60dp</dimen>
     <dimen name="navigation_drawer_width">280dp</dimen>
     <dimen name="bottom_navigation_height">80dp</dimen>
     
